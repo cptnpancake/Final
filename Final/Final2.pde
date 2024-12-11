@@ -71,6 +71,7 @@ textSize(32);
       
     }
   }  
+  //Following behaviors for when Pac-Man eats the dots.
    if(chomp1 == false){
   dot1.display();}
 if(chomp1 == true){
@@ -88,11 +89,11 @@ if(chomp2 == false){
 if(chomp2 == true){
 dot2.x = -1000;} 
   if (player.collidesWith(dot2)) {
-    if (waka.isPlaying()) { //Plays the "waka" sound effect when Pac-Man eats the dot.
+    if (waka.isPlaying()) {
       println("File is still playing after seconds");
     } else {
       waka.play();
-      chomp2 = true; //Activates the chomp state for the game.
+      chomp2 = true; 
 }
   }
   if(chomp3 == false){
@@ -100,11 +101,10 @@ dot2.x = -1000;}
 if(chomp3 == true){
 dot3.x = -1000;} 
   if (player.collidesWith(dot3)) {
-    if (waka.isPlaying()) { //Plays the "waka" sound effect when Pac-Man eats the dot.
-      println("File is still playing after seconds");
+    if (waka.isPlaying()) { 
     } else {
       waka.play();
-      chomp3 = true; //Activates the chomp state for the game.
+      chomp3 = true;
 }
   }
   if(chomp4 == false){
@@ -112,13 +112,14 @@ dot3.x = -1000;}
 if(chomp4 == true){
 dot4.x = -1000;} 
   if (player.collidesWith(dot4)) {
-    if (waka.isPlaying()) { //Plays the "waka" sound effect when Pac-Man eats the dot.
+    if (waka.isPlaying()) {
       println("File is still playing after seconds");
     } else {
       waka.play();
-      chomp4 = true; //Activates the chomp state for the game.
+      chomp4 = true;
 }
   }
+  //Behavior for when all dots are eaten and the player wins the game.
   if(chomp1 == true & chomp2 == true & chomp3 == true & chomp4 == true){
     textSize(32);
     fill(255);
