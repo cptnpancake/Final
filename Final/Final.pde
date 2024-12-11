@@ -5,14 +5,18 @@
   Course Name: DMA60 Creative Coding
   Prof. George McKinney
   Project Description: This is a simplied version of Pac-Man where eating dots will generate an abstract background.
-  Last Modified: December 2, 2024
+  Last Modified: December 11, 2024
   */
 
 
 //This pde file is setting up the boolean states, playable character (Pac-Man), obstacles (ghost), and collectibles (dots).
-
-boolean caught = false;
 //The state for when the ghost catches Pac-Man.
+boolean caught = false;
+//The states for when Pac-Man eats the individual dots.
+boolean chomp1 = false;
+boolean chomp2 = false;
+boolean chomp3 = false;
+boolean chomp4 = false;
 
 
 class Character { //The playable Pac-Man character.
@@ -35,6 +39,11 @@ class Character { //The playable Pac-Man character.
     return distance < (size + obstacle.size) / 2;
   }
   
+ boolean collidesWith(Collectible collectible) {
+    float distance = dist(x, y, collectible.x, collectible.y);
+    return distance < (size + collectible.size) / 2;
+  }
+
   void display() {
     fill(255, 255, 0);
     arc(x, y, 80, 80, .6, TWO_PI-.6);
